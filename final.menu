@@ -1,0 +1,14 @@
+from modules.advanced import set_budget, check_budget_status
+
+# ... inside your while loop ...
+elif choice == '6':
+    cat = input("Enter category to budget: ")
+    limit = input("Enter monthly limit: ")
+    set_budget(cat, limit)
+    print(f"✅ Budget set for {cat}!")
+
+elif choice == '7':
+    # Get current spending from our reports module logic
+    from modules.reports import get_category_breakdown
+    current_data = get_category_breakdown([e.to_dict() for e in manager.get_all()])
+    print(check_budget_status(current_data))
